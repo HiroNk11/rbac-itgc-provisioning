@@ -1,5 +1,19 @@
 # Hito 1 — recepción de solicitudes y auditoría, .NET 10
 
+## Demo interactiva
+
+[Vista previa de la demo (acceso privado del propietario)](https://rbac-itgc-demo.nicogiron09.chatgpt.site) · [Ejecutar localmente y conocer los límites](demo/README.md)
+
+Explorá solicitudes, conflictos SoD, reintentos idempotentes y evidencia SHA-256 con datos ficticios. Es una simulación en el navegador, independiente de la API: no autentica identidades ni aprovisiona cuentas.
+
+## Capturas de la demo
+
+![Solicitudes y respuesta de control SoD con datos ficticios](docs/screenshots/dashboard.png)
+
+![Verificación de la cadena de evidencia SHA-256](docs/screenshots/auditoria.png)
+
+## Backend .NET
+
 Solución compilable con Domain → Application → Api. El adaptador en memoria está en Api/Storage para no añadir un cuarto proyecto al MVP. Domain no depende de ASP.NET Core. No hay paquetes NuGet externos.
 
 En el espacio de trabajo recibido solo se encontró el prototipo anterior Rbac.Core; las implementaciones aquí incluidas de SystemRole, SodPolicyValidator y ProvisioningRequest son referencias completas. Al integrar con tus proyectos, conservar una sola definición de cada tipo y ajustar las firmas del handler y del almacén a las existentes.
